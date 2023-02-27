@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "5989889a-a157-487e-af7f-8ed875aa4d79",
+		"name": "request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25666333"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/getstation/2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/station",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"station"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
