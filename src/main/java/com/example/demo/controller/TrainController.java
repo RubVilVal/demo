@@ -3,9 +3,10 @@ package com.example.demo.controller;
 import com.example.demo.entities.Train;
 import com.example.demo.repository.TrainRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/train")
 public class TrainController {
     private final TrainRepository trainRepository;

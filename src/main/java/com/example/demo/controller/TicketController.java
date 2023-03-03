@@ -3,9 +3,10 @@ package com.example.demo.controller;
 import com.example.demo.entities.Ticket;
 import com.example.demo.repository.TicketRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/ticket")
 public class TicketController {
     private final TicketRepository ticketRepository;

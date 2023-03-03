@@ -3,9 +3,10 @@ package com.example.demo.controller;
 import com.example.demo.entities.Schedule;
 import com.example.demo.repository.ScheduleRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/schedule")
 public class ScheduleController {
     private final ScheduleRepository scheduleRepository;

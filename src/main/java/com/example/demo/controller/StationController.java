@@ -2,13 +2,22 @@ package com.example.demo.controller;
 
 import com.example.demo.entities.Station;
 import com.example.demo.repository.StationRepository;
+import com.example.demo.services.StationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.List;
+import java.util.Optional;
+
+@Controller
 @RequestMapping("/station")
 public class StationController {
     private final StationRepository stationRepository;
+    @Autowired
+    private StationService stationService;
 
     public StationController(StationRepository stationRepository) {
         this.stationRepository = stationRepository;
@@ -41,5 +50,12 @@ public class StationController {
         Station station = this.stationRepository.findById(id).get();
         this.stationRepository.deleteById(id);
         return ResponseEntity.ok(station);
+    }
+
+    @RequestMapping("/getAll")
+    public String getAll(Model model) {
+        List<Station> stations = stationService.getAll();
+        model.addAttribute("stations", stations);
+        return "stations";
     }
 }
