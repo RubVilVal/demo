@@ -58,4 +58,10 @@ public class StationController {
         model.addAttribute("stations", stations);
         return "stations";
     }
+
+    @PostMapping("/addNew")
+    public String addNew(Station station) {
+        stationService.addNew(station);
+        return "redirect:/station/getAll";
+    }
 }

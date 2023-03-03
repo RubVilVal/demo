@@ -17,4 +17,8 @@ public class StationService {
         return (List<Station>) stationRepository.findAll();
     }
 
+    public void addNew(Station station) {
+        stationRepository.save(station);
+    }
+
 }
