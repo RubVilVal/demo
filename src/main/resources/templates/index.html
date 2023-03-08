@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Thymeleaf demo</title>
 </head>
 <body>
 <h2>Everything works so far</h2>
+
+<div>
+    <a th:href="@{station/showStations}">Stations</a>
+</div>
+<hr/>
+<div>
+    <a th:href="@{ticket/showTickets}">Tickets</a>
+</div>
+
 </body>
 </html>

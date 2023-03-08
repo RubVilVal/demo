@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entities.Train;
 import com.example.demo.repository.TrainRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/train")
 public class TrainController {
+    @Autowired
     private final TrainRepository trainRepository;
 
     public TrainController(TrainRepository trainRepository) {
