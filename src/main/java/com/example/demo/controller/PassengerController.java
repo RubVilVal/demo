@@ -35,9 +35,11 @@ public class PassengerController {
     @PutMapping("{id}")
     public ResponseEntity updatePassenger(@PathVariable Long id, @RequestBody Passenger passenger){
         Passenger passengerToUpdate = this.passengerRepository.findById(id).get();
-        passengerToUpdate.setFirst_name(passenger.getFirst_name());
+        passengerToUpdate.setName(passenger.getName());
         passengerToUpdate.setSurname(passenger.getSurname());
         passengerToUpdate.setDate_of_birth(passenger.getDate_of_birth());
+        passengerToUpdate.setPassword(passenger.getPassword());
+        passengerToUpdate.setRole(passenger.getRole());
         return ResponseEntity.ok(this.passengerRepository.save(passengerToUpdate));
     }
 
