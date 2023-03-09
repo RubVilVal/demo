@@ -1,8 +1,10 @@
 CREATE TABLE passengers (
 	id serial primary key,
-	first_name character varying(200) NOT NULL,
+	name character varying(200) NOT NULL,
 	surname character varying(200) NOT NULL,
 	date_of_birth date NOT NULL
+	password character varying(200) NOT NULL,
+	role character varying(200) NOT NULL
 );
 
 CREATE TABLE trains (
