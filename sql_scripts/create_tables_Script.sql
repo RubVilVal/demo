@@ -2,7 +2,7 @@ CREATE TABLE passengers (
 	id serial primary key,
 	name character varying(200) NOT NULL,
 	surname character varying(200) NOT NULL,
-	date_of_birth date NOT NULL
+	date_of_birth date NOT NULL,
 	password character varying(200) NOT NULL,
 	role character varying(200) NOT NULL
 );

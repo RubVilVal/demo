@@ -8,12 +8,25 @@
 <h2>Everything works so far</h2>
 
 <div>
-    <a th:href="@{station/showStations}">Stations</a>
+    <span th:if='${session.get("SPRING_SECURITY_CONTEXT").getAuthentication().getAuthorities().get(0).getAuthority().equals("ROLE_ADMIN")}'>
+        <a th:href="@{station/showStations}">Stations</a>
+    </span>
 </div>
+
 <hr/>
+
 <div>
-    <a th:href="@{ticket/showTickets}">Tickets</a>
+    <span th:if='${session.get("SPRING_SECURITY_CONTEXT").getAuthentication().getAuthorities().get(0).getAuthority().equals("ROLE_USER")}'>
+        <a th:href="@{ticket/showTickets}">Tickets</a>
+    </span>
 </div>
+<!--<div>-->
+<!--    <a th:href="@{station/showStations}">Stations</a>-->
+<!--</div>-->
+<!--<hr/>-->
+<!--<div>-->
+<!--    <a th:href="@{ticket/showTickets}">Tickets</a>-->
+<!--</div>-->
 
 
 <!--<div th:if="${#authorization.expression('hasAuthority(''ROLE_USER'')')}">USER</div>-->
@@ -24,6 +37,7 @@
 <!--<p th:text="${#ctx.httpSession}"></p>-->
 <!--<div><span th:text="${session.keySet().stream().findFirst().get()}"></span></div>-->
 <!--<div><span th:text="${session.get(session.keySet().stream().findFirst().get()).getAuthentication().getAuthorities().get(0).getAuthority()}"></span></div>-->
+
 <!--<div><span th:if='${session.get("SPRING_SECURITY_CONTEXT").getAuthentication().getAuthorities().get(0).getAuthority().equals("ROLE_ADMIN")}'>role admin</span></div>-->
 
 </body>
