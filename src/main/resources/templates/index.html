@@ -16,7 +16,15 @@
 </div>
 
 
-<!--<div th:if="${#authorization.expression('hasAuthority(''ROLE_USER'')')}">ADMIn section</div>-->
+<!--<div th:if="${#authorization.expression('hasAuthority(''ROLE_USER'')')}">USER</div>-->
+<!--<div><span th:text="${#authorization}"></span></div>-->
+<!--<div th:if="${#authorization.expression('hasRole(''ROLE_USER'')'}">USER</div>-->
+<!--<div sec:authorize="hasRole(''USER'')">USER</div>-->
+
+<!--<p th:text="${#ctx.httpSession}"></p>-->
+<!--<div><span th:text="${session.keySet().stream().findFirst().get()}"></span></div>-->
+<!--<div><span th:text="${session.get(session.keySet().stream().findFirst().get()).getAuthentication().getAuthorities().get(0).getAuthority()}"></span></div>-->
+<!--<div><span th:if='${session.get("SPRING_SECURITY_CONTEXT").getAuthentication().getAuthorities().get(0).getAuthority().equals("ROLE_ADMIN")}'>role admin</span></div>-->
 
 </body>
 </html>
